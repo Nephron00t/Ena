@@ -154,11 +154,11 @@ def main():
     def get_peripheral_awarness(_data):
         psd_o1 = DataFilter.get_psd_welch(_data[7], nfft, nfft // 2, sampling_rate, WindowFunctions.BLACKMAN_HARRIS.value)
         high_alpha_01 = DataFilter.get_band_power(psd_o1, 10.0, 12.0)
-        low_beta_01 = DataFilter.get_band_power(psd_o1, 12.0, 13.0)
+        low_beta_01 = DataFilter.get_band_power(psd_o1, 14.0, 15.0)
 
         psd_o2 = DataFilter.get_psd_welch(_data[7], nfft, nfft // 2, sampling_rate, WindowFunctions.BLACKMAN_HARRIS.value)
         higha_lpha_02 = DataFilter.get_band_power(psd_o2, 10.0, 12.0)
-        low_beta_02 = DataFilter.get_band_power(psd_o2, 12.0, 13.0)
+        low_beta_02 = DataFilter.get_band_power(psd_o2, 14.0, 15.0)
 
         occipital_high_alpha = (high_alpha_01 + higha_lpha_02) / 2
         occipital_low_beta = (low_beta_01 + low_beta_02) / 2
